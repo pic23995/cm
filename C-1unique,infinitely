@@ -1,0 +1,15 @@
+import numpy as np
+A = np.array([[2, 1], [1, 1]])
+B = np.array([5, 3])
+det = np.linalg.det(A)
+if det != 0:
+    X = np.linalg.solve(A, B)
+    print("Unique Solution:", X)
+else:
+    aug = np.column_stack((A, B))
+    r1 = np.linalg.matrix_rank(A)
+    r2 = np.linalg.matrix_rank(aug)
+    if r1 == r2:
+        print("Infinite Solutions")
+    else:
+        print("No Solution")
