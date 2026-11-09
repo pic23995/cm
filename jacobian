@@ -1,0 +1,19 @@
+# Program to find Partial Derivatives and Jacobian
+
+import sympy as sp
+x, y, z = sp.symbols('x y z')
+F = x**2*y + y**2*z**2 + sp.sin(x*z)
+print("Given Function:")
+sp.pprint(F)
+Fx = sp.diff(F, x)
+Fy = sp.diff(F, y)
+Fz = sp.diff(F, z)
+print("\nPartial Derivative with respect to x:")
+sp.pprint(Fx)
+print("\nPartial Derivative with respect to y:")
+sp.pprint(Fy)
+print("\nPartial Derivative with respect to z:")
+sp.pprint(Fz)
+J = sp.Matrix([Fx, Fy, Fz])
+print("\nJacobian Matrix:")
+sp.pprint(J)
