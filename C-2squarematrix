@@ -1,0 +1,13 @@
+import numpy as np
+A = np.array([[4, 2],
+              [1, 3]])
+values, vectors = np.linalg.eig(A)
+print("Given Matrix:")
+print(A)
+print("Eigenvalues are:")
+print(values)
+print("Eigenvectors are:")
+print(vectors)
+for i in range(len(values)):
+    print("Eigenvalue:", values[i])
+    print("Corresponding Eigenvector:", vectors[:, i])
